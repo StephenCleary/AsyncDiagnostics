@@ -7,7 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nito.AsyncEx.AsyncDiagnosti
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C1903330-69E2-4632-B836-0C21FC4BE74B}"
 	ProjectSection(SolutionItems) = preProject
+		..\icon.png = ..\icon.png
+		..\LICENSE = ..\LICENSE
 		Nito.AsyncEx.AsyncDiagnostics.nuspec = Nito.AsyncEx.AsyncDiagnostics.nuspec
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{F75A1310-A917-40C7-8CBB-541FE3EDEBBC}"

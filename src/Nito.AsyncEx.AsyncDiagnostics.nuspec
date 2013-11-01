@@ -10,7 +10,7 @@
     <description>Easy-to-use exception causality chains for async/await.</description>
     <language>en-US</language>
     <projectUrl>https://github.com/StephenCleary/AsyncDiagnostics</projectUrl>
-    <iconUrl>https://lh3.googleusercontent.com/-rWegFo7oREc/Tmgxy2qf6mI/AAAAAAAAFoE/15IERRFJ01I/s800/cadence%2525202%252520small.PNG</iconUrl>
+    <iconUrl>https://raw.github.com/StephenCleary/AsyncDiagnostics/master/icon.png</iconUrl>
     <tags>nito async await async-await asynchronous net45</tags>
     <dependencies>
       <dependency id="PostSharp" version="3.1" />
