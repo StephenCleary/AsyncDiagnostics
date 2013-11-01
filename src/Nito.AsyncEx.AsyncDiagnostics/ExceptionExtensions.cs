@@ -9,6 +9,17 @@ namespace Nito.AsyncEx.AsyncDiagnostics
     public static class ExceptionExtensions
     {
         /// <summary>
+        /// Returns <see cref="Exception.ToString"/> concatenated with the <see cref="AsyncDiagnosticStack"/> for this exception and any inner exceptions. This can be used as a replacement for <see cref="Exception.ToString"/>.
+        /// </summary>
+        public static string ToAsyncDiagnosticString(this Exception exception)
+        {
+            var ret = exception.ToString();
+            if (ret.EndsWith("\n"))
+                return ret + exception.NestedAsyncDiagnosticStacks();
+            return ret + Environment.NewLine + exception.NestedAsyncDiagnosticStacks();
+        }
+
+        /// <summary>
         /// Returns the async diagnostic stack attached to this <see cref="Exception"/>, or <see cref="string.Empty"/> if there is no async diagnostic stack. This does not return any details for inner exceptions.
         /// </summary>
         public static string AsyncDiagnosticStack(this Exception exception)
@@ -17,20 +28,9 @@ namespace Nito.AsyncEx.AsyncDiagnostics
         }
 
         /// <summary>
-        /// Returns <see cref="Exception.ToString"/> concatenated with the <see cref="LogicalStack"/>. This can be used as a replacement for <see cref="Exception.ToString"/>.
-        /// </summary>
-        public static string ToAsyncDiagnosticString(this Exception exception)
-        {
-            var ret = exception.ToString();
-            if (ret.EndsWith("\n"))
-                return ret + exception.LogicalStack();
-            return ret + Environment.NewLine + exception.LogicalStack();
-        }
-
-        /// <summary>
         /// Returns the logical stack for this exception, including any async diagnostic stacks of inner exceptions as well.
         /// </summary>
-        public static string LogicalStack(this Exception exception)
+        private static string NestedAsyncDiagnosticStacks(this Exception exception)
         {
             var sb = new StringBuilder();
             var asyncStack = exception.AsyncDiagnosticStack();
@@ -51,14 +51,14 @@ namespace Nito.AsyncEx.AsyncDiagnostics
                 for (int i = 0; i != inner.Count; ++i)
                 {
                     sb.AppendLine("--> (Inner exception #" + i + ")");
-                    sb.Append(LogicalStack(inner[i]));
+                    sb.Append(AsyncDiagnosticStack(inner[i]));
                     sb.AppendLine("<--");
                 }
             }
             else if (exception.InnerException != null)
             {
                 sb.AppendLine("--> (Inner exception)");
-                sb.Append(LogicalStack(exception.InnerException));
+                sb.Append(AsyncDiagnosticStack(exception.InnerException));
                 sb.AppendLine("<--");
             }
 

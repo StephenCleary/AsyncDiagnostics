@@ -38,7 +38,7 @@ namespace Nito.AsyncEx.AsyncDiagnostics
         /// <summary>
         /// The <see cref="Exception.Data"/> key under which the async diagnostic stack is added to each exception.
         /// </summary>
-        public static string DataKey { get { return "Nito.AsyncEx.PostSharp.AsyncDiagnosticStack"; } }
+        public static string DataKey { get { return "Nito.AsyncEx.AsyncDiagnostics.AsyncDiagnosticStack"; } }
 
         /// <summary>
         /// Gets the current async diagnostic stack.

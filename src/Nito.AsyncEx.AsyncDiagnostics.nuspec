@@ -2,20 +2,19 @@
 <package>
   <metadata>
     <id>Nito.AsyncEx.AsyncDiagnostics</id>
-    <version>1.0.0-pre</version>
+    <version>1.0.1-pre</version>
     <title>Async Diagnostics</title>
     <authors>Stephen Cleary</authors>
     <owners>Stephen Cleary</owners>
-    <summary>A helper library for diagnosing async/await code.</summary>
-    <description>A helper library for diagnosing async/await code.</description>
+    <summary>Easy-to-use exception causality chains for async/await.</summary>
+    <description>Easy-to-use exception causality chains for async/await.</description>
     <language>en-US</language>
-    <!--  <licenseUrl>http://nitoasyncex.codeplex.com/license</licenseUrl> -->
-    <projectUrl>http://nitoasyncex.codeplex.com/</projectUrl>
+    <projectUrl>https://github.com/StephenCleary/AsyncDiagnostics</projectUrl>
     <iconUrl>https://lh3.googleusercontent.com/-rWegFo7oREc/Tmgxy2qf6mI/AAAAAAAAFoE/15IERRFJ01I/s800/cadence%2525202%252520small.PNG</iconUrl>
     <tags>nito async await async-await asynchronous net45</tags>
     <dependencies>
-      <dependency id="PostSharp" version="3.0.24" />
-      <dependency id="Nito.AsyncEx.AsyncLocal" />
+      <dependency id="PostSharp" version="3.1" />
+      <dependency id="Microsoft.Bcl.Immutable" />
     </dependencies>
     <releaseNotes>
     </releaseNotes>
