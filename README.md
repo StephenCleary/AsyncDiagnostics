@@ -3,6 +3,8 @@ AsyncDiagnostics: Easy-to-use exception causality chains for async/await
 
 ![logo](https://raw.github.com/StephenCleary/AsyncDiagnostics/master/icon.png)
 
+To get started, download the [NuGet package](https://www.nuget.org/packages/Nito.AsyncEx.AsyncDiagnostics/).
+
 All async diagnostics helpers are in this namespace:
 
     using Nito.AsyncEx.AsyncDiagnostics;
@@ -53,3 +55,9 @@ Limitations
 ===========
 
 There is no support for partial trust.
+
+There is a definite runtime impact.
+
+Only works on the full .NET framework. There's no support for Windows Store, Phone, or Silverlight.
+
+Works best if you build in Debug mode. If a call is inlined, it won't show up in the logical stack.
