@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>Nito.AsyncEx.AsyncDiagnostics</id>
-    <version>1.0.1-pre</version>
+    <version>1.0.2</version>
     <title>Async Diagnostics</title>
     <authors>Stephen Cleary</authors>
     <owners>Stephen Cleary</owners>
